@@ -51,6 +51,12 @@ constructor(props){
         loading: false
     }
 }
+async componentDidMount(){
+    let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=d7d03996e8484cea80abb3760149b805";
+    let data = await fetch(url);
+    let parsedData= await data.json()
+    this.setState({articles: parsedData.articles})
+}
     
   render() {
     return (
@@ -60,7 +66,7 @@ constructor(props){
         <div className="row">
         {this.state.articles.map((element)=>{
             return <div className="col-md-4" key={element.url}>
-            <NewsItem  title={element.title} description={element.description} imageUrl={element.urlToImage} />
+            <NewsItem  title={element.title.slice(0,45)} description={element.description.slice(0,88)} imageUrl={element.urlToImage} newsUrl={element.url} />
           </div>
         })}
           
