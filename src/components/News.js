@@ -58,13 +58,13 @@ handlenextclick=async()=>{
     return (
         <>
       <div className="container my-3 text-center ">
-        <h2>NewsMonkey-Top Headlines</h2>
+        <h2 className="my-5">NewsMonkey-Top Headlines</h2>
         {this.state.loading && <Spinner/>}
        
         <div className="row">
         {!this.state.loading && this.state.articles.map((element)=>{
             return <div className="col-md-4" key={element.url}>
-            <NewsItem  title={element.title.slice(0,45)} description={element.description.slice(0,88)} imageUrl={element.urlToImage} newsUrl={element.url} />
+            <NewsItem  title={element.title.slice(0,45)} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} />
           </div>
         })}
           <div className="container d-flex justify-content-between">
