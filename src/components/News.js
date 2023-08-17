@@ -58,7 +58,7 @@ handlenextclick=async()=>{
     return (
         <>
       <div className="container my-3 text-center ">
-        <h2 className="my-5">NewsMonkey-Top Headlines</h2>
+        <h2 className="my-5">NewsFlash-Top Headlines</h2>
         {this.state.loading && <Spinner/>}
        
         <div className="row">
